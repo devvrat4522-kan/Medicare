@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="page3 " style="height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; background-image: url('{% static 'img/img2.jpg' %}'); background-size: cover; background-position: left; background-repeat: no-repeat;">
+    <div class="overlay">
+<div id="prediction-login-23">
+    <div id="login-container">
+        <form action="" method="post">{% csrf_token %}
+            <label for="symptom"> Enter The Symptoms </label>
+            <h4>Give underscore if there are multiple words. e.g. continuous_sneezing, stomach_pain, etc.</h4><br>
+            <input id="in-pre" type="text" name="symptom" placeholder="jhsdfvh" required><br><br>
+            <button type="submit" id="predict"> Predict </button>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+{% endblock content%}

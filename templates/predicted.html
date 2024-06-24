@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div id="predicted-container">
+        <header>
+            <h1>Health Information</h1>
+        </header>
+         <section class="category description">
+            <h2>Description</h2>
+            <p>{{desc}}</p>
+        </section>
+        <section class="category medication">
+            <h2>Medication</h2>
+            <ul>
+                {% for item in med %}
+                    <li>{{item}}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section class="category precaution">
+            <h2>Precaution</h2>
+            <ul>
+                {% for item in pre %}
+                    <li>{{item}}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        
+        <section class="category diet">
+            <h2>Diet</h2>
+            <ul>
+                {% for item in diet %}
+                    <li>{{item}}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section class="category workout">
+            <h2>Workout</h2>
+            <ul>
+                {% for item in workout %}
+                    <li>{{item}}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section class="pdf">
+            {% comment %} {% for symp in symptom %} {% endcomment %}
+            {% comment %} <p>{{symptom}}</p> {% endcomment %}
+            <form action="{% url 'generate_pdf' symptom_id=symptom %}" method="post">
+                {% csrf_token %} 
+            <button type="submit">Generate PDF</button>
+            {% comment %} {% endfor %} {% endcomment %}
+        </section>
+    </form>
+    </div>
+{% endblock content%}

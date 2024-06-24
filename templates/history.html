@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="History-container">
+    <div id="his-cont">
+        <div id="img-full-cont">
+            <h1> Previous Records </h1>
+            <div id="history-img">
+                <img src="{% static 'C:/Users/91983/Desktop/value/medical_1/static/img/img5.jpg' %}" alt="Medical Illustration">
+            </div>
+        </div>
+        <div id="scroll-bg">
+        <div id="scroll-div">
+        {% for data in res %}
+        <div id="scroll-object">
+        {% comment %} <h2 > Entry {{ data.id }}</h2> {% endcomment %}
+        <p style="align-item:center"><strong>Date:</strong><bold> {{ data.date }}</bold></p>
+        <p><strong>Symptoms:</strong> {{ data.symptoms }}</p>
+        <p><strong>Disease:</strong> {{ data.disease }}</p>
+        <p><strong>Description:</strong> {{ data.description }}</p>
+        <p><strong>Medication:</strong> {{ data.medication}}</p>
+        <p><strong>Diet:</strong> {{ data.diet}}</p>
+        <p><strong>Workout:</strong> {{ data.workout}}</p>
+        <p><strong>Precautions:</strong> {{ data.precautions }}</p>
+        </div>
+        {% endfor %}
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock content%}

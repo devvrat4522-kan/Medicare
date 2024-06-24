@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="pages-login">
+    <div id="doc-img">
+        <img src="{% static 'C:/Users/91983/Desktop/value/medical_1/static/img/log.jpg' %}"  >
+    </div>
+    <div id="login-container1">
+        <form action="/login/" method="post">
+            {% csrf_token %}
+            <h2><bold>Login</bold></h2> <br>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div><br>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div><br>
+            <button type="submit">Login</button>
+            <p class="alternate-action">Forgot your password? <a href="#">Reset it here</a>.</p>
+            <p class="alternate-action">New User <a href="/signup/">New User</a>.</p>
+        </form>
+        {% if msg %}
+            <h4>{{msg}}</h4>
+        {% endif %}
+    </div> 
+</div>
+{% endblock content%}

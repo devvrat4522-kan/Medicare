@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" name="viewport">
+    <title> Medic {% block title%}  {% endblock title %}</title>
+    {% block extra_head %}{% endblock %}
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+<body>
+    <div id="full-container">
+    <div id="nav">
+        <div id="logo"><h1> MeDiC@Re </h1></div>
+        <div id="nav-in">
+             {%if not request.user.is_authenticated %}
+            <a href="/" class="nav-link" data-toggle="collapse"><h3> Home </h3> </a>
+            {% endif %}
+            {%if request.user.is_authenticated %}
+            <a href="/history/" class="nav-link" data-toggle="collapse"><h3> History </h3> </a>
+            {% endif %}
+            <a href="/aboutus/" class="nav-link" data-toggle="collapse"><h3> AboutUs </h3> </a>
+            <a href="/contactus/" class="nav-link" data-toggle="collapse"><h3> ContactUs </h3> </a>
+            <a href="/prediction/" class="nav-link" data-toggle="collapse"><h3> Prediction </h3> </a>
+        </div>
+            <div id="nav-out">
+                {%if not request.user.is_authenticated %}
+                <div class="dropdown">
+                    <button class="dropbtn">Sign In</button>
+                    <div class="dropdown-content">
+                        <a href="/signup/">Sign Up</a>
+                        <a href="/login/">Login</a>
+                    </div>
+                {% endif %}
+                {%if request.user.is_authenticated %}
+                    <a href="{% url 'logout' %}" class="app-sidebar-link">
+                    <button class="dropbtn">Logout</button>
+                    </a>
+                {% endif %}
+                </div>
+            </div>
+    </div>
+    {% block content %}
+
+    {% endblock content %}
+    </div>
+</body>
+</html>
