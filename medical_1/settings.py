@@ -19,7 +19,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 PORT = os.environ.get('PORT', 8000)
 
 # Update ALLOWED_HOSTS
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.vercel.app']
+
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -30,23 +32,6 @@ SECRET_KEY = 'django-insecure-q75-d77s_^py(l6ffre-rurx8nr!58bke121$6jxsmq%(4+gt!
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'root': {
-        'handlers': ['console'],
-        'level': 'DEBUG',
-    },
-}
-
 
 
 # Application definition
