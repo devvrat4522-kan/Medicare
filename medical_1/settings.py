@@ -16,6 +16,13 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+PORT = os.environ.get('PORT', 8000)
+
+# Update ALLOWED_HOSTS
+ALLOWED_HOSTS = ['.vercel.app']
+
+
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -25,15 +32,6 @@ SECRET_KEY = 'django-insecure-q75-d77s_^py(l6ffre-rurx8nr!58bke121$6jxsmq%(4+gt!
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-PORT = os.environ.get('PORT', 8000)
-
-# Update ALLOWED_HOSTS
-ALLOWED_HOSTS = ['.vercel.app']
-
 
 
 # Application definition
