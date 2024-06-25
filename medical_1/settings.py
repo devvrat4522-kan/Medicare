@@ -95,6 +95,10 @@ WSGI_APPLICATION = 'medical_1.wsgi.application'
 # }
 
 db_url = os.environ.get("DATABASE_URL")
+print("#############################3333",db_url)
+print(f"db_url type: {type(db_url)}, value: {db_url}")
+if isinstance(db_url, bytes):
+    db_url = db_url.decode('utf-8')
 
 DATABASES = {
     'default': dj_database_url.parse(db_url)
