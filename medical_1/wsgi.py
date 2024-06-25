@@ -16,7 +16,5 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'medical_1.settings')
 
 application = get_wsgi_application()
 
-
-
 runserver.default_port = os.getenv('PORT', '8000')
 

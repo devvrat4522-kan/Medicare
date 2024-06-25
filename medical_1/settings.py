@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # PORT = os.environ.get('PORT', 8000)
 
 # Update ALLOWED_HOSTS
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*"]
 
 
 
@@ -29,13 +29,13 @@ ALLOWED_HOSTS = ['*']
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-q75-d77s_^py(l6ffre-rurx8nr!58bke121$6jxsmq%(4+gt!'
+SECRET_KEY = 'django-insecure-q75-d77s_^py(l6ffre-rurx8nr!58bke121$6jxsmq%(4+gt!'
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
+# SECRET_KEY = os.environ.get("SECRET_KEY")
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG","False").lower()=="true"
-
+# # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = os.environ.get("DEBUG","False").lower()=="true"
+DEBUG = True
 
 # Application definition
 
@@ -94,15 +94,23 @@ WSGI_APPLICATION = 'medical_1.wsgi.application'
 #     }
 # }
 
-db_url = os.environ.get("DATABASE_URL")
-print("#############################3333",db_url)
-print(f"db_url type: {type(db_url)}, value: {db_url}")
-if isinstance(db_url, bytes):
-    db_url = db_url.decode('utf-8')
-
 DATABASES = {
-    'default': dj_database_url.parse(db_url)
+'default': {
+'ENGINE': 'django.db.backends.sqlite3',
+'NAME': BASE_DIR/ 'db.sqlite3',
 }
+}
+
+DATABASES["default"] = dj_database_url.parse("postgresql://medicare_gf24_user:f087mvPpVVu23NQyC2Xx4TFEHzLd5WEB@dpg-cpt711rv2p9s73b2lf40-a.oregon-postgres.render.com/medicare_gf24")
+
+
+
+# db_url = os.environ.get("DATABASE_URL")
+# print("#############################3333",db_url)
+# print(f"db_url type: {type(db_url)}, value: {db_url}")
+# DATABASES = {
+#     'default': dj_database_url.parse(db_url)
+# }
 
 
 # Password validation
