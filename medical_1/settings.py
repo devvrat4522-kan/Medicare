@@ -92,7 +92,8 @@ WSGI_APPLICATION = 'medical_1.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.config(default='postgresql://medicare_gf24_user:f087mvPpVVu23NQyC2Xx4TFEHzLd5WEB@dpg-cpt711rv2p9s73b2lf40-a/medicare_gf24',
+        conn_max_age=600)
 }
 
 
