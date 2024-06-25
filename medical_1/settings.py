@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 PORT = os.environ.get('PORT', 8000)
 
 # Update ALLOWED_HOSTS
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['*']
 
 
 
