@@ -13,13 +13,14 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-PORT = os.environ.get('PORT', 8000)
+# PORT = os.environ.get('PORT', 8000)
 
 # Update ALLOWED_HOSTS
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['*']
 
 
 
@@ -28,10 +29,12 @@ ALLOWED_HOSTS = ['.vercel.app']
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-q75-d77s_^py(l6ffre-rurx8nr!58bke121$6jxsmq%(4+gt!'
+# SECRET_KEY = 'django-insecure-q75-d77s_^py(l6ffre-rurx8nr!58bke121$6jxsmq%(4+gt!'
+
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG","False").lower()=="true"
 
 
 # Application definition
@@ -91,8 +94,10 @@ WSGI_APPLICATION = 'medical_1.wsgi.application'
 #     }
 # }
 
+db_url = os.environ.get("DATABASE_URL")
+
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(db_url)
 }
 
 
