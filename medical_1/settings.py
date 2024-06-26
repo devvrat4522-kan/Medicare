@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # PORT = os.environ.get('PORT', 8000)
 
 # Update ALLOWED_HOSTS
-ALLOWED_HOSTS = ['127.0.0.1','medicare-10-gbvj.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 
 
@@ -83,25 +83,25 @@ WSGI_APPLICATION = 'medical_1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+DATABASES = {
+    'default': {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "medi_care",
+        "USER": "root",
+        "PASSWORD": "123456789",
+        "HOST": "127.0.0.1",
+        "PORT": "3306",
+    }
+}
+
 # DATABASES = {
-#     'default': {
-#         "ENGINE": "django.db.backends.mysql",
-#         "NAME": "medi_care",
-#         "USER": "root",
-#         "PASSWORD": "123456789",
-#         "HOST": "127.0.0.1",
-#         "PORT": "3306",
-#     }
+# 'default': {
+# 'ENGINE': 'django.db.backends.sqlite3',
+# 'NAME': BASE_DIR/ 'db.sqlite3',
+# }
 # }
 
-DATABASES = {
-'default': {
-'ENGINE': 'django.db.backends.sqlite3',
-'NAME': BASE_DIR/ 'db.sqlite3',
-}
-}
-
-DATABASES["default"] = dj_database_url.parse("postgresql://medicare_gf24_user:f087mvPpVVu23NQyC2Xx4TFEHzLd5WEB@dpg-cpt711rv2p9s73b2lf40-a.oregon-postgres.render.com/medicare_gf24")
+# DATABASES["default"] = dj_database_url.parse("postgresql://medicare_gf24_user:f087mvPpVVu23NQyC2Xx4TFEHzLd5WEB@dpg-cpt711rv2p9s73b2lf40-a.oregon-postgres.render.com/medicare_gf24")
 
 
 

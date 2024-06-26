@@ -204,8 +204,8 @@ def history(request):
     final_list = []
     for item in list_item:
         final_list.append(item)
-    print(final_list)
-    print(type(final_list[0]))
+    # print(final_list)
+    # print(type(final_list[0]))
     return render(request, 'history.html',{'res':final_list})
 
 
