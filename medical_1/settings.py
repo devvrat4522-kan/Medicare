@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # PORT = os.environ.get('PORT', 8000)
 
 # Update ALLOWED_HOSTS
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','medicare-10-gbvj.onrender.com']
 
 
 
