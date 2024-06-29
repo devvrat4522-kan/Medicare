@@ -15,15 +15,15 @@ import io
 # C:/Users/91983/Desktop/medi/Medicare/static/img/img2.jpg
 
 # Importing the datasets
-sym_des = pd.read_csv("C:/Users/91983/Desktop/value/medical_1/datasets/symtoms_df.csv")
-precaution_df = pd.read_csv("C:/Users/91983/Desktop/value/medical_1/datasets/precautions_df.csv")
-workout_df = pd.read_csv("C:/Users/91983/Desktop/value/medical_1/datasets/workout_df.csv")
-description_df = pd.read_csv("C:/Users/91983/Desktop/value/medical_1/datasets/description.csv")
-medication_df = pd.read_csv("C:/Users/91983/Desktop/value/medical_1/datasets/medications.csv")
-diets_df = pd.read_csv("C:/Users/91983/Desktop/value/medical_1/datasets/diets.csv")
+sym_des = pd.read_csv("datasets/symtoms_df.csv")
+precaution_df = pd.read_csv("datasets/precautions_df.csv")
+workout_df = pd.read_csv("datasets/workout_df.csv")
+description_df = pd.read_csv("datasets/description.csv")
+medication_df = pd.read_csv("datasets/medications.csv")
+diets_df = pd.read_csv("datasets/diets.csv")
 
 # Loading the model
-svc = pickle.load(open("C:/Users/91983/Desktop/value//medical_1/model/svc.pkl",'rb'))
+svc = pickle.load(open("model/svc.pkl",'rb'))
 
 def index(request):
     return render(request, 'login.html')
