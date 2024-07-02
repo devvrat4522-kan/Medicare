@@ -15,7 +15,6 @@ import os
 import dj_database_url
 from os import getenv
 from dotenv import load_dotenv
-print(load_dotenv().__version__)
 # from decouple import config
 
 
@@ -26,7 +25,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Update ALLOWED_HOSTS
 ALLOWED_HOSTS = ['*']
-
 
 
 
