@@ -119,11 +119,6 @@ DATABASES = {
 # 'NAME': BASE_DIR/ 'db.sqlite3',
 # }
 # }
-# # 
-# postgresql://medicare_gf24_user:f087mvPpVVu23NQyC2Xx4TFEHzLd5WEB@dpg-cpt711rv2p9s73b2lf40-a/medicare_gf24
-# postgresql://medicare_gf24_user:f087mvPpVVu23NQyC2Xx4TFEHzLd5WEB@dpg-cpt711rv2p9s73b2lf40-a.oregon-postgres.render.com/medicare_gf24
-# DATABASES["default"] = dj_database_url.parse(os.environ.get('DATABASE_URL'))
-
 
 
 # Password validation
