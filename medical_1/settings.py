@@ -98,7 +98,7 @@ WSGI_APPLICATION = 'medical_1.wsgi.application'
 #     }
 # }
 
-load_dotenv()
+load_dotenv(".env")
 # Replace the DATABASES section of your settings.py with this
 DATABASES = {
   'default': {
