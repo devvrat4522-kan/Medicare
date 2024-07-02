@@ -12,10 +12,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
-from os import getenv
-from dotenv import load_dotenv
-# from decouple import config
+# import dj_database_url
+# from os import getenv
+# from dotenv import load_dotenv
+from decouple import config
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -98,16 +98,16 @@ WSGI_APPLICATION = 'medical_1.wsgi.application'
 #     }
 # }
 
-load_dotenv(".env")
+# load_dotenv(".env")
 # Replace the DATABASES section of your settings.py with this
 DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql',
-    'NAME': getenv('PGDATABASE'),
-    'USER': getenv('PGUSER'),
-    'PASSWORD': getenv('PGPASSWORD'),
-    'HOST': getenv('PGHOST'),
-    'PORT': getenv('PGPORT', 5432),
+    'NAME': config('PGDATABASE'),
+    'USER': config('PGUSER'),
+    'PASSWORD': config('PGPASSWORD'),
+    'HOST': config('PGHOST'),
+    'PORT': config('PGPORT', 5432),
     'OPTIONS': {
       'sslmode': 'require',
     },
