@@ -15,6 +15,8 @@ import os
 import dj_database_url
 from os import getenv
 from dotenv import load_dotenv
+# from decouple import config
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,13 +33,13 @@ ALLOWED_HOSTS = ['*']
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-q75-d77s_^py(l6ffre-rurx8nr!58bke121$6jxsmq%(4+gt!'
+# SECRET_KEY = 'django-insecure-q75-d77s_^py(l6ffre-rurx8nr!58bke121$6jxsmq%(4+gt!'
 
-# SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.environ.get("DEBUG","False").lower()=="true"
-DEBUG = True
+DEBUG = os.environ.get("DEBUG","False").lower()=="true"
+# DEBUG = getenv("DEBUG")
 
 # Application definition
 
@@ -85,49 +87,43 @@ WSGI_APPLICATION = 'medical_1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "medi_care",
-        "USER": "root",
-        "PASSWORD": "123456789",
-        "HOST": "127.0.0.1",
-        "PORT": "3306",
-    }
-}
-
-
-# Replace the DATABASES section of your settings.py with this
 # DATABASES = {
-#   'default': {
-#     'ENGINE': 'django.db.backends.postgresql',
-#     'NAME': getenv('PGDATABASE'),
-#     'USER': getenv('PGUSER'),
-#     'PASSWORD': getenv('PGPASSWORD'),
-#     'HOST': getenv('PGHOST'),
-#     'PORT': getenv('PGPORT', 5432),
-#     'OPTIONS': {
-#       'sslmode': 'disable',
-#     },
-#   }
+#     'default': {
+#         "ENGINE": "django.db.backends.mysql",
+#         "NAME": "medi_care",
+#         "USER": "root",
+#         "PASSWORD": "123456789",
+#         "HOST": "127.0.0.1",
+#         "PORT": "3306",
+#     }
 # }
+
+load_dotenv()
+# Replace the DATABASES section of your settings.py with this
+DATABASES = {
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': getenv('PGDATABASE'),
+    'USER': getenv('PGUSER'),
+    'PASSWORD': getenv('PGPASSWORD'),
+    'HOST': getenv('PGHOST'),
+    'PORT': getenv('PGPORT', 5432),
+    'OPTIONS': {
+      'sslmode': 'require',
+    },
+  }
+}
 # DATABASES = {
 # 'default': {
 # 'ENGINE': 'django.db.backends.sqlite3',
 # 'NAME': BASE_DIR/ 'db.sqlite3',
 # }
 # }
+# # 
+# postgresql://medicare_gf24_user:f087mvPpVVu23NQyC2Xx4TFEHzLd5WEB@dpg-cpt711rv2p9s73b2lf40-a/medicare_gf24
+# postgresql://medicare_gf24_user:f087mvPpVVu23NQyC2Xx4TFEHzLd5WEB@dpg-cpt711rv2p9s73b2lf40-a.oregon-postgres.render.com/medicare_gf24
+# DATABASES["default"] = dj_database_url.parse(os.environ.get('DATABASE_URL'))
 
-# DATABASES["default"] = dj_database_url.parse("postgresql://medicare_gf24_user:f087mvPpVVu23NQyC2Xx4TFEHzLd5WEB@dpg-cpt711rv2p9s73b2lf40-a.oregon-postgres.render.com/medicare_gf24")
-
-
-
-# db_url = os.environ.get("DATABASE_URL")
-# print("#############################3333",db_url)
-# print(f"db_url type: {type(db_url)}, value: {db_url}")
-# DATABASES = {
-#     'default': dj_database_url.parse(db_url)
-# }
 
 
 # Password validation
