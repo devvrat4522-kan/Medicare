@@ -15,6 +15,7 @@ import os
 import dj_database_url
 from os import getenv
 from dotenv import load_dotenv
+print(load_dotenv().__version__)
 # from decouple import config
 
 
@@ -33,7 +34,8 @@ ALLOWED_HOSTS = ['*']
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-q75-d77s_^py(l6ffre-rurx8nr!58bke121$6jxsmq%(4+gt!'
+# SECRET_KEY = 'django-insdotenv
+# ecure-q75-d77s_^py(l6ffre-rurx8nr!58bke121$6jxsmq%(4+gt!'
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
