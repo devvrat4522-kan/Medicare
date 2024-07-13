@@ -1,5 +1,6 @@
 <h1>Medic@re</h1>
 <h2>AI Medical Recommendation System</h2><p>The Medicare AI Medical Recommendation System is an advanced web application that integrates Django and machine learning to provide medical recommendations based on user-input symptoms. The system predicts the potential disease and offers relevant medications, precautions, workouts, and dietary advice. Additionally, users can manage their profiles with login and signup functionalities and view their medical history. The application also allows users to generate a PDF of the detailed medical report.</p><h2>General Information</h2>
+<h2>Deployed Link:</h2>https://medicare-rbx9.onrender.com 
 <hr><ul>
 <li>The primary purpose of the Medicare AI Medical Recommendation System is to empower individuals with accessible and personalized medical advice. By leveraging artificial intelligence and machine learning, the system aims to provide quick and accurate disease predictions and comprehensive medical recommendations, which can be especially useful in areas with limited access to healthcare professionals.</li>
 </ul><ul>
