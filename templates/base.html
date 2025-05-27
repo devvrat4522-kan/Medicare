@@ -7,6 +7,7 @@
     <title> Medic {% block title%}  {% endblock title %}</title>
     {% block extra_head %}{% endblock %}
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dark-mode.css' %}">
 </head>
 <body>
     <div id="full-container">
@@ -38,11 +39,13 @@
                     </a>
                 {% endif %}
                 </div>
+                <button id="darkModeToggle" class="dropbtn">Toggle Dark Mode</button>
             </div>
     </div>
     {% block content %}
 
     {% endblock content %}
     </div>
+    <script src="{% static 'js/theme-switcher.js' %}"></script>
 </body>
 </html>
