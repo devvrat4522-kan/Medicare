@@ -1,0 +1,73 @@
+/* static/css/dark-mode.css */
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode #nav {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.dark-mode #logo h1{
+    color: #e0e0e0;
+}
+
+body.dark-mode .nav-link h3 {
+    color: #e0e0e0;
+}
+
+body.dark-mode #page1,
+body.dark-mode #page2,
+body.dark-mode #page3 {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .input-group input,
+body.dark-mode .input-group select { /* Assuming selects might also need styling */
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    border: 1px solid #3c3c3c;
+}
+
+body.dark-mode button,
+body.dark-mode .dropbtn, /* Style for existing dropdown buttons */
+body.dark-mode input[type="submit"] /* Style for submit inputs that look like buttons */ {
+    background-color: #333333;
+    color: #e0e0e0;
+    border: 1px solid #444444;
+}
+
+body.dark-mode button:hover,
+body.dark-mode .dropbtn:hover,
+body.dark-mode input[type="submit"]:hover {
+    background-color: #444444;
+}
+
+body.dark-mode .dropdown-content {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .dropdown-content a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .dropdown-content a:hover {
+    background-color: #333333;
+}
+
+/* Add specific styles for prediction page elements if needed */
+body.dark-mode .container {
+    background-color: #1e1e1e; /* Or #121212 if you want it same as body */
+    color: #e0e0e0;
+}
+
+body.dark-mode .result-container p {
+    color: #e0e0e0;
+}
+
+body.dark-mode label {
+    color: #e0e0e0;
+}
